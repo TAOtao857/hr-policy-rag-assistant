@@ -108,6 +108,23 @@ python eval/evaluate_coze_bot.py
 
 > 基于 Coze 搭建 HR 制度问答助手：RAG 检索 + 自定义工具插件（年假/加班费/政策时效计算），实现引用溯源与拒答兜底；编写知识库切分脚本与 50 条评测集，对系统做工程化效果验证。
 
+## 推送到 GitHub（本地已 `git init` 并提交）
+
+仓库已本地初始化并提交首个 commit（`.env` 已被 `.gitignore` 排除，密钥不会泄露）。推到 GitHub 只需三步：
+
+```bash
+# 1. 在 github.com 新建一个空仓库（不要勾选 README/LICENSE，保持空）
+# 2. 添加远端（把 <username> 换成你的账号）
+git remote add origin https://github.com/<username>/hr-policy-rag-assistant.git
+
+# 3. 推送
+git branch -M main
+git push -u origin main
+```
+
+> 若用 SSH：`git remote add origin git@github.com:<username>/hr-policy-rag-assistant.git`
+> 嫌麻烦可把 GitHub Personal Access Token 发给 AI，由它用 API 建仓库并推送。
+
 ## 局限与后续
 
 - 素材为公开模板/示例数据，未接入真实企业制度；后续可替换为脱敏真实文档。
