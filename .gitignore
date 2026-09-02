@@ -1,0 +1,8 @@
+# 密钥（含真实 PAT，绝不进仓库）
+.env
+
+# 运行时产物
+kb_output/
+__pycache__/
+*.pyc
+.DS_Store

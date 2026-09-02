@@ -1,0 +1,50 @@
+{"id": "T01", "category": "tool", "question": "员工2020-03-01入职，到2026-09-01有多少天年假？", "tool": "leave_calculator.calc_annual_leave", "inputs": {"entry_date": "2020-03-01", "as_of": "2026-09-01"}, "expect_contains": ["5天"]}
+{"id": "T02", "category": "tool", "question": "员工2026-03-01入职，2026-09-01时当年能休几天年假？", "tool": "leave_calculator.calc_annual_leave", "inputs": {"entry_date": "2026-03-01", "as_of": "2026-09-01"}, "expect_contains": ["4天"]}
+{"id": "T03", "category": "tool", "question": "2016-08-01入职的员工，2026年有多少天年假？", "tool": "leave_calculator.calc_annual_leave", "inputs": {"entry_date": "2016-08-01", "as_of": "2026-09-01"}, "expect_contains": ["10天"]}
+{"id": "T04", "category": "tool", "question": "2005-01-01入职的员工，年休假几天？", "tool": "leave_calculator.calc_annual_leave", "inputs": {"entry_date": "2005-01-01", "as_of": "2026-09-01"}, "expect_contains": ["15天"]}
+{"id": "T05", "category": "tool", "question": "员工2026-01-01入职，到2026-09-01按折算能休几天年假？", "tool": "leave_calculator.calc_annual_leave", "inputs": {"entry_date": "2026-01-01", "as_of": "2026-09-01"}, "expect_contains": ["5天"]}
+{"id": "T06", "category": "tool", "question": "2016-09-01入职，到2026-09-01满10年，年假几天？", "tool": "leave_calculator.calc_annual_leave", "inputs": {"entry_date": "2016-09-01", "as_of": "2026-09-01"}, "expect_contains": ["10天"]}
+{"id": "T07", "category": "tool", "question": "时薪100，工作日加班2小时，加班费多少？", "tool": "overtime_calculator.calc_overtime_pay", "inputs": {"hourly_base": 100, "hours": 2, "ot_type": "工作日"}, "expect_contains": ["300"]}
+{"id": "T08", "category": "tool", "question": "时薪100，休息日加班3小时且不能补休，加班费多少？", "tool": "overtime_calculator.calc_overtime_pay", "inputs": {"hourly_base": 100, "hours": 3, "ot_type": "休息日"}, "expect_contains": ["600"]}
+{"id": "T09", "category": "tool", "question": "时薪100，法定节假日加班1小时，加班费多少？", "tool": "overtime_calculator.calc_overtime_pay", "inputs": {"hourly_base": 100, "hours": 1, "ot_type": "法定节假日"}, "expect_contains": ["300"]}
+{"id": "T10", "category": "tool", "question": "月薪8000，时薪是多少？", "tool": "overtime_calculator.monthly_to_hourly", "inputs": {"monthly_salary": 8000}, "expect_contains": ["45.98"]}
+{"id": "T11", "category": "tool", "question": "职工带薪年休假条例现在还有效吗？", "tool": "policy_validity.check_validity", "inputs": {"effective_date": "2008-01-01", "revoked_date": null, "as_of": "2026-09-01"}, "expect_contains": ["现行有效"]}
+{"id": "T12", "category": "tool", "question": "某条1995年生效、2020年废止的规定现在有效吗？", "tool": "policy_validity.check_validity", "inputs": {"effective_date": "1995-01-01", "revoked_date": "2020-01-01", "as_of": "2026-09-01"}, "expect_contains": ["已废止"]}
+{"id": "T13", "category": "tool", "question": "2030年才生效的规定，现在有效吗？", "tool": "policy_validity.check_validity", "inputs": {"effective_date": "2030-01-01", "revoked_date": null, "as_of": "2026-09-01"}, "expect_contains": ["未生效"]}
+{"id": "T14", "category": "tool", "question": "月薪10000对应的时薪是多少？", "tool": "overtime_calculator.monthly_to_hourly", "inputs": {"monthly_salary": 10000}, "expect_contains": ["57.47"]}
+{"id": "R01", "category": "retrieval", "question": "员工带薪年休假怎么规定？", "expect_contains": ["年休假", "5 天"]}
+{"id": "R02", "category": "retrieval", "question": "病假工资怎么算？", "expect_contains": ["病假", "80%"]}
+{"id": "R03", "category": "retrieval", "question": "事假有没有工资？", "expect_contains": ["事假", "无薪"]}
+{"id": "R04", "category": "retrieval", "question": "工资一般几号发？", "expect_contains": ["每月 10 日"]}
+{"id": "R05", "category": "retrieval", "question": "加班工资按什么标准支付？", "expect_contains": ["150%", "200%", "300%"]}
+{"id": "R06", "category": "retrieval", "question": "时薪怎么算？", "expect_contains": ["21.75"]}
+{"id": "R07", "category": "retrieval", "question": "试用期最长可以到几个月？", "expect_contains": ["六个月"]}
+{"id": "R08", "category": "retrieval", "question": "年终奖是固定的吗？", "expect_contains": ["非固定"]}
+{"id": "R09", "category": "retrieval", "question": "公司怎么给员工交社保？", "expect_contains": ["社会保险"]}
+{"id": "R10", "category": "retrieval", "question": "法定节假日加班是几倍工资？", "expect_contains": ["300%"]}
+{"id": "R11", "category": "retrieval", "question": "累计工作满10年，年假几天？", "expect_contains": ["10 天"]}
+{"id": "R12", "category": "retrieval", "question": "工作满20年，年假多少天？", "expect_contains": ["15 天"]}
+{"id": "R13", "category": "retrieval", "question": "迟到怎么处理？", "expect_contains": ["迟到", "事假扣薪"]}
+{"id": "R14", "category": "retrieval", "question": "加班需要提前审批吗？", "expect_contains": ["加班需提前审批"]}
+{"id": "R15", "category": "retrieval", "question": "公积金怎么缴纳？", "expect_contains": ["住房公积金"]}
+{"id": "R16", "category": "retrieval", "question": "能泄露公司商业秘密吗？", "expect_contains": ["商业秘密"]}
+{"id": "R17", "category": "retrieval", "question": "劳动合同试用期怎么规定？", "expect_contains": ["试用期"]}
+{"id": "R18", "category": "retrieval", "question": "病假要提供什么材料？", "expect_contains": ["医院证明"]}
+{"id": "R19", "category": "retrieval", "question": "休息日加班不能补休怎么算？", "expect_contains": ["200%"]}
+{"id": "R20", "category": "retrieval", "question": "年休假满1年但不满10年有几天？", "expect_contains": ["5 天"]}
+{"id": "R21", "category": "retrieval", "question": "工资由哪几部分组成？", "expect_contains": ["基本工资", "绩效工资"]}
+{"id": "R22", "category": "retrieval", "question": "加班工资计算基数怎么定？", "expect_contains": ["时薪"]}
+{"id": "R23", "category": "retrieval", "question": "员工入职要提供哪些材料？", "expect_contains": ["身份证明", "学历证明"]}
+{"id": "R24", "category": "retrieval", "question": "病假算不算带薪？", "expect_contains": ["病假工资"]}
+{"id": "R25", "category": "retrieval", "question": "薪酬制度里年终奖依据什么发？", "expect_contains": ["公司效益", "个人绩效"]}
+{"id": "R26", "category": "retrieval", "question": "工作日是周几到周几？", "expect_contains": ["周一至周五"]}
+{"id": "F01", "category": "refusal", "question": "公司食堂今天吃什么？", "topic": "食堂"}
+{"id": "F02", "category": "refusal", "question": "怎么报销打车费？", "topic": "打车费"}
+{"id": "F03", "category": "refusal", "question": "股票期权怎么计算？", "topic": "期权"}
+{"id": "F04", "category": "refusal", "question": "出差补贴标准是多少？", "topic": "出差补贴"}
+{"id": "F05", "category": "refusal", "question": "女员工产假多少天？", "topic": "产假"}
+{"id": "F06", "category": "refusal", "question": "怎么连接公司WiFi？", "topic": "WiFi"}
+{"id": "F07", "category": "refusal", "question": "个人所得税怎么申报？", "topic": "个税"}
+{"id": "F08", "category": "refusal", "question": "员工宿舍怎么申请？", "topic": "宿舍"}
+{"id": "F09", "category": "refusal", "question": "培训协议违约金多少？", "topic": "违约金"}
+{"id": "F10", "category": "refusal", "question": "竞业限制补偿怎么发？", "topic": "竞业限制"}
